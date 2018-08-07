@@ -6,7 +6,7 @@ float initialTime;
 void setup() {
   initialTime = millis()/1000.0;
   //size(800, 800, P3D);    
-  fullScreen();
+  fullScreen(P3D);
   pg = createGraphics(width, height, P2D);
   pg.noSmooth();
   bufferA = loadShader("strange-fluid.glsl");
