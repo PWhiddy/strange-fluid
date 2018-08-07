@@ -5,7 +5,7 @@ float initialTime;
 
 void setup() {
   initialTime = millis()/1000.0;
-  size(800, 800, P3D);    
+  //size(800, 800, P3D);    
   fullScreen();
   pg = createGraphics(width, height, P2D);
   pg.noSmooth();
