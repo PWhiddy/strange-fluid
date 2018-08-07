@@ -4,9 +4,10 @@ PGraphics pg;
 float initialTime;
 
 void setup() {
-  size(800, 800, P3D);    
   initialTime = millis()/1000.0;
-  pg = createGraphics(800, 800, P2D);
+  size(800, 800, P3D);    
+  fullScreen();
+  pg = createGraphics(width, height, P2D);
   pg.noSmooth();
   bufferA = loadShader("strange-fluid.glsl");
   bufferA.set("resolution", float(pg.width), float(pg.height));  
