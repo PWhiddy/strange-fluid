@@ -4,6 +4,7 @@ PGraphics pg;
 float initialTime;
 
 void setup() {
+  /// test
   initialTime = millis()/1000.0;
   //size(800, 800, P3D);    
   fullScreen(P3D);
