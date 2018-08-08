@@ -12,12 +12,13 @@ void setup() {
   fluidBuffer = createGraphics(width, height, P2D);
   fluidBuffer.noSmooth();
   displayBuffer = createGraphics(width, height, P2D);
+  displayBuffer.noSmooth();
   
   fluidPass = loadShader("strange-fluid.glsl");
   displayPass = loadShader("display.glsl");
   
   fluidPass.set("resolution", float(fluidBuffer.width), float(fluidBuffer.height));
-  displayPass.set("resolution", float(fluidBuffer.width), float(fluidBuffer.height));
+  displayPass.set("resolution", float(displayPass.width), float(displayPass.height));
 }
 
 void draw() {
@@ -33,7 +34,8 @@ void draw() {
   fluidBuffer.endDraw();  
   
   displayBuffer.beginDraw();
-  displayBuffer.background(0);
+  displayBuffer.image(fluidBuffer, 0, 0);
+  //displayBuffer.background(0);
   displayBuffer.shader(displayPass);
   displayBuffer.rect(0,0, displayBuffer.width, displayBuffer.height);
   displayBuffer.endDraw();
