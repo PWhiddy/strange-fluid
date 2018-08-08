@@ -4,7 +4,7 @@
 precision highp float;
 #endif
 
-#define PROCESSING_COLOR_SHADER
+//#define PROCESSING_COLOR_SHADER
 
 uniform float time;
 uniform vec2 mouse;
