@@ -106,8 +106,6 @@ void main()
     }    
 	
 }
-
-
 */
 
 #ifdef GL_ES
