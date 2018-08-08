@@ -110,12 +110,23 @@ void main()
 
 */
 
-void mainImage( out vec4 fragColor, in vec2 fragCoord )
+#ifdef GL_ES
+precision highp float;
+#endif
+
+#define PROCESSING_COLOR_SHADER
+
+uniform float time;
+uniform vec2 mouse;
+uniform vec2 resolution;
+uniform sampler2D ppixels;
+
+void main()
 {
-	vec2 uv = fragCoord.xy / iResolution.xy;
+	vec2 uv = gl_FragCoord.xy / resolution.xy;
 	//fragColor = vec4( 65.0*pow(texture(iChannel0, uv).rgb, vec3(6.0)), 1.0);
     //fragColor = vec4( 1.0*pow(texture(iChannel0, uv).rgb, vec3(1.0)), 1.0);
-    vec3 c = texture(iChannel0, uv).rgb;
+    vec3 c = texture(ppixels, uv).rgb;
     float l = length(c);
     //fragColor = vec4( vec3(5.0*pow(l,18.0)),1.0);
     //fragColor = vec4( vec3(1.0*pow(l,1.0)),1.0);
@@ -141,5 +152,5 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 	//*/
     
     //fragColor = vec4( vec3(1.0*pow(c3,vec3(1.0))),1.0);
-	fragColor = vec4(vec3(0.5*sin(6.0*l+0.3*iTime)+0.5),1.0);
+	gl_FragColor = vec4(vec3(0.5*sin(6.0*l+0.3*time)+0.5),1.0);
 }
