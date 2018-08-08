@@ -37,7 +37,7 @@ void draw() {
   displayBuffer.image(fluidBuffer, 0, 0);
   //displayBuffer.background(0);
   displayBuffer.shader(displayPass);
-  displayBuffer.rect(0,0, displayBuffer.width, displayBuffer.height);
+  //displayBuffer.rect(0,0, displayBuffer.width, displayBuffer.height);
   displayBuffer.endDraw();
   
   image(displayBuffer, 0, 0, width, height);
