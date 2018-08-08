@@ -18,7 +18,7 @@ void setup() {
   displayPass = loadShader("display.glsl");
   
   fluidPass.set("resolution", float(fluidBuffer.width), float(fluidBuffer.height));
-  displayPass.set("resolution", float(displayPass.width), float(displayPass.height));
+  displayPass.set("resolution", float(displayBuffer.width), float(displayBuffer.height));
 }
 
 void draw() {
@@ -37,7 +37,7 @@ void draw() {
   displayBuffer.image(fluidBuffer, 0, 0);
   //displayBuffer.background(0);
   displayBuffer.shader(displayPass);
-  //displayBuffer.rect(0,0, displayBuffer.width, displayBuffer.height);
+  displayBuffer.rect(0,0, displayBuffer.width, displayBuffer.height);
   displayBuffer.endDraw();
   
   image(displayBuffer, 0, 0, width, height);
