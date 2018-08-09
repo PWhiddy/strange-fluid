@@ -10,7 +10,7 @@ uniform float time;
 uniform vec2 mouse;
 uniform vec2 resolution;
 varying vec4 vertTexCoord;
-uniform sampler2D dataBuff;
+uniform sampler2D dataBuffer;
 
 void main()
 {
@@ -19,7 +19,7 @@ void main()
     ivec2 uv = ivec2(gl_FragCoord.xy);
 	//fragColor = vec4( 65.0*pow(texture(iChannel0, uv).rgb, vec3(6.0)), 1.0);
     //fragColor = vec4( 1.0*pow(texture(iChannel0, uv).rgb, vec3(1.0)), 1.0);
-    vec3 c = texture2D(dataBuff, vertTexCoord.st).rgb;
+    vec3 c = texture2D(dataBuffer, vertTexCoord.st).rgb;
     float l = length(c);
     //fragColor = vec4( vec3(5.0*pow(l,18.0)),1.0);
     //fragColor = vec4( vec3(1.0*pow(l,1.0)),1.0);
