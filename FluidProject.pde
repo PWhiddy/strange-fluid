@@ -9,9 +9,9 @@ void setup() {
   initialTime = millis()/1000.0;
   size(200, 200, P3D);    
   //fullScreen(P3D);
-  fluidBuffer = createGraphics(width, height, P2D);
+  fluidBuffer = createGraphics(200,200,P2D);//width, height, P2D);
   fluidBuffer.noSmooth();
-  displayBuffer = createGraphics(width, height, P2D);
+  displayBuffer = createGraphics(200,200,P2D);//width, height, P2D);
   displayBuffer.noSmooth();
   
   fluidPass = loadShader("strange-fluidFrag.glsl");
@@ -22,13 +22,14 @@ void setup() {
 }
 
 void draw() {
-  background(0);
+  //background(0);
   fluidPass.set("time", millis()/1000.0-initialTime);
   displayPass.set("time", millis()/1000.0-initialTime);
   float x = map(mouseX, 0, width, 0, 1);
   float y = map(mouseY, 0, height, 1, 0);
   fluidPass.set("mouse", x, y);
   fluidBuffer.beginDraw();
+  background(0);
   fluidBuffer.shader(fluidPass);
   fluidBuffer.rect(0, 0, fluidBuffer.width, fluidBuffer.height);
   fluidBuffer.endDraw();  
