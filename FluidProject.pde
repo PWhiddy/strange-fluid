@@ -21,8 +21,8 @@ void setup() {
   
   fluidPass.set("resolution", float(fluidBuffer.width), float(fluidBuffer.height));
   
-  blurPass.set("blurSize", 15);
-  blurPass.set("sigma", 7.0);
+  blurPass.set("blurSize", 12);
+  blurPass.set("sigma", 4.0);
 }
 
 void draw() {
@@ -40,7 +40,7 @@ void draw() {
   textBuffer.text("VOID", width/2, height/2);
   textBuffer.endDraw();
   
-  /*
+  
   blurPass.set("horizontalPass", 0);
   textBuffer.beginDraw();
   textBuffer.shader(blurPass);
@@ -52,7 +52,7 @@ void draw() {
   textBuffer.shader(blurPass);
   textBuffer.image(textBuffer, 0, 0);
   textBuffer.endDraw();
-  */
+  
   
   fluidPass.set("textBuffer", textBuffer);
   fluidPass.set("mouse", x, y);
