@@ -20,6 +20,9 @@ void setup() {
   blurPass = loadShader("blur.glsl");
   
   fluidPass.set("resolution", float(fluidBuffer.width), float(fluidBuffer.height));
+  
+  blurPass.set("blurSize", 15);
+  blurPass.set("sigma", 7.0);
 }
 
 void draw() {
