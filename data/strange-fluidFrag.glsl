@@ -80,7 +80,7 @@ void main()
         float comp = 0.6;//iMouse.y*0.004+0.2;
         
         vec3 wild2 = vec3(0.0);
-        for (int i = 0; i < 10; i++ ) {
+        for (int i = 0; i < 20; i++ ) {
         	wild2 += 0.5*normalize(cross(wild2,kernel[i]-comp)+comp); 
         }
       // wild2 /= 5.0;
