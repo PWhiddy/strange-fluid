@@ -29,7 +29,9 @@ void draw() {
   textBuffer.beginDraw();
   textBuffer.textSize(width*0.4);
   textBuffer.textAlign(CENTER, CENTER);
-  //textBuffer.fill(0,0,0);
+  textBuffer.fill(0);
+  textBuffer.rect(0, 0, textBuffer.width, textBuffer.height);
+  textBuffer.fill(255);
   textBuffer.text("VOID", width/2, height/2);
   textBuffer.endDraw();
   
