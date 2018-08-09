@@ -25,7 +25,8 @@ void main()
         // Center pixel
 
         vec3 c = texelFetch(ppixels,uv,0).rgb;
-        vec3 text = texture2D(textBuffer, vec2(0.0,sin(0.2*time+uv.x*0.01)*0.1)+vec2(uv)/resolution).rgb;
+        vec3 text = texture2D(textBuffer, 
+            vec2(0.0,sin(0.2*time+uv.x*0.01)*0.1)+vec2(uv)/resolution).rgb;
 
         //// 3x3 ////
 
@@ -92,7 +93,7 @@ void main()
         //float m = sqrt(mouse.y/resolution.y);
         vec2 coords = gl_FragCoord.xy / resolution.xy - 0.5;
         coords.x *= resolution.x/resolution.y;
-        float m = 0.3*length(text)+0.13;//0.2*distance(coords, vec2(0.0))-0.1*length(text);
+        float m = 0.3*length(text)+0.16;//0.2*distance(coords, vec2(0.0))-0.1*length(text);
         
         wild2 = mix(mix(blur,wild2,m), blur, m );
 
