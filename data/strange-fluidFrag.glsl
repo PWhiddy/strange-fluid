@@ -87,10 +87,10 @@ void main()
      //   wild2 *= 5.0;//iMouse.x*0.018+0.6;
         
        // wild2 = mix(wild2, c, 0.001);
-        float m = sqrt(mouse.y/resolution.y);
-        vec2 coords = gl_FragCoord.xy / resolution.xy - 0.5;
+        //float m = sqrt(mouse.y/resolution.y);
+        ec2 coords = gl_FragCoord.xy / resolution.xy - 0.5;
         coords.x *= resolution.x/resolution.y;
-        m = 0.2*distance(coords, vec2(0.0));
+        float m = 0.2*distance(coords, vec2(0.0));
         
         wild2 = mix(mix(blur,wild2,m), blur, m );
 
