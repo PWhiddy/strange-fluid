@@ -7,11 +7,11 @@ float initialTime;
 
 void setup() {
   initialTime = millis()/1000.0;
-  size(200, 200, P3D);    
+  size(400, 400, P3D);    
   //fullScreen(P3D);
-  fluidBuffer = createGraphics(200,200,P2D);//width, height, P2D);
+  fluidBuffer = createGraphics(400,400,P2D);//width, height, P2D);
   fluidBuffer.noSmooth();
-  displayBuffer = createGraphics(200,200,P2D);//width, height, P2D);
+  displayBuffer = createGraphics(400,400,P2D);//width, height, P2D);
   displayBuffer.noSmooth();
   
   fluidPass = loadShader("strange-fluidFrag.glsl");
