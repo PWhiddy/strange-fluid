@@ -4,12 +4,13 @@
 precision highp float;
 #endif
 
-#define PROCESSING_COLOR_SHADER
+#define PROCESSING_TEXTURE_SHADER
 
 uniform float time;
 uniform vec2 mouse;
 uniform vec2 resolution;
 uniform sampler2D ppixels;
+uniform sampler2D textBuffer;
 
 void main()
 {
