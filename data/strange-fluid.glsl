@@ -25,7 +25,7 @@ void main()
         // Center pixel
 
         vec3 c = texelFetch(ppixels,uv,0).rgb;
-        vec3 text = texelFetch(textBuffer, uv, 0).rgb;
+        vec3 text = texelFetch(textBuffer, uv+vec2(0.0, sin(time)*0.03*, 0).rgb;
 
         //// 3x3 ////
 
