@@ -19,6 +19,7 @@ void setup() {
   
   fluidPass.set("resolution", float(fluidBuffer.width), float(fluidBuffer.height));
   displayPass.set("resolution", float(displayBuffer.width), float(displayBuffer.height));
+  
 }
 
 void draw() {
@@ -27,20 +28,18 @@ void draw() {
   displayPass.set("time", millis()/1000.0-initialTime);
   float x = map(mouseX, 0, width, 0, 1);
   float y = map(mouseY, 0, height, 1, 0);
+  
   fluidPass.set("mouse", x, y);
-  displayPass.set("mouse", x, y);
   fluidBuffer.beginDraw();
-  background(0);
   fluidBuffer.shader(fluidPass);
   fluidBuffer.rect(0, 0, fluidBuffer.width, fluidBuffer.height);
   fluidBuffer.endDraw();  
   
+  displayPass.set("mouse", x, y);
   displayBuffer.beginDraw();
   displayBuffer.shader(displayPass);
   displayBuffer.image(fluidBuffer, 0, 0);
-  //displayBuffer.background(0);
-  //displayBuffer.rect(0,0, displayBuffer.width, displayBuffer.height);
   displayBuffer.endDraw();
   
-  image(displayBuffer, 0, 0, width, height);
+  image(fluidBuffer, 0, 0, width, height);
 }
