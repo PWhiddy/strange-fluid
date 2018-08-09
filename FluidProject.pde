@@ -14,8 +14,8 @@ void setup() {
   fluidBuffer.noSmooth();
   textBuffer = createGraphics(width, height, P2D);
   
-  fluidPass = loadShader("strange-fluidFrag.glsl");
-  displayPass = loadShader("displayFrag.glsl");
+  fluidPass = loadShader("strange-fluid.glsl");
+  displayPass = loadShader("display.glsl");
   
   fluidPass.set("resolution", float(fluidBuffer.width), float(fluidBuffer.height));
 }
@@ -27,7 +27,7 @@ void draw() {
   float y = map(mouseY, 0, height, 1, 0);
   
   textBuffer.beginDraw();
-  textBuffer.textSize(width*0.4);
+  textBuffer.textSize(width*0.35);
   textBuffer.textAlign(CENTER, CENTER);
   textBuffer.fill(0);
   textBuffer.rect(0, 0, textBuffer.width, textBuffer.height);
