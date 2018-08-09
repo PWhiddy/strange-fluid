@@ -2,15 +2,17 @@
 PShader fluidPass;
 PShader displayPass;
 PGraphics fluidBuffer;
+PGraphics textBuffer;
 float initialTime;
 
 void setup() {
   initialTime = millis()/1000.0;
-  size(180, 180, P3D);    
+  size(480, 480, P3D);    
   //fullScreen(P3D);
 
   fluidBuffer = createGraphics(width, height, P2D);
   fluidBuffer.noSmooth();
+  textBuffer = createGraphics(width, height, P2D);
   
   fluidPass = loadShader("strange-fluidFrag.glsl");
   displayPass = loadShader("displayFrag.glsl");
@@ -24,13 +26,20 @@ void draw() {
   float x = map(mouseX, 0, width, 0, 1);
   float y = map(mouseY, 0, height, 1, 0);
   
+  textBuffer.beginDraw();
+  textBuffer.textSize(width*0.4);
+  textBuffer.textAlign(CENTER, CENTER);
+  //textBuffer.fill(0,0,0);
+  textBuffer.text("VOID", width/2, height/2);
+  textBuffer.endDraw();
+  
+  fluidPass.set("textBuffer", textBuffer);
   fluidPass.set("mouse", x, y);
   fluidBuffer.beginDraw();
   fluidBuffer.background(0);
   fluidBuffer.shader(fluidPass);
   fluidBuffer.rect(0, 0, fluidBuffer.width, fluidBuffer.height);
-  fluidBuffer.text("hello", width/2, height/2);
-  fluidBuffer.endDraw();  
+  fluidBuffer.endDraw();
   
   displayPass.set("dataBuffer", fluidBuffer);
   shader(displayPass);
