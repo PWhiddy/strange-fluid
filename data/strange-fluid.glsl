@@ -25,7 +25,7 @@ void main()
         // Center pixel
 
         vec3 c = texelFetch(ppixels,uv,0).rgb;
-        vec3 text = texture2D(textBuffer, vec2(uv)).rgb;
+        vec3 text = texture2D(textBuffer, vec2(uv)/resolution).rgb;
 
         //// 3x3 ////
 
