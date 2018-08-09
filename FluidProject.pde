@@ -40,6 +40,18 @@ void draw() {
   textBuffer.text("VOID", width/2, height/2);
   textBuffer.endDraw();
   
+  blurPass.set("horizontalPass", 0);
+  textBuffer.beginDraw();
+  textBuffer.shader(blurPass);
+  textBuffer.image(textBuffer, 0, 0);
+  textBuffer.endDraw();
+  
+  blurPass.set("horizontalPass", 1);
+  textBuffer.beginDraw();
+  textBuffer.shader(blurPass);
+  textBuffer.image(textBuffer, 0, 0);
+  textBuffer.endDraw();
+  
   fluidPass.set("textBuffer", textBuffer);
   fluidPass.set("mouse", x, y);
   fluidBuffer.beginDraw();
