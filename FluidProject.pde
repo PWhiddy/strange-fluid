@@ -28,6 +28,7 @@ void draw() {
   float x = map(mouseX, 0, width, 0, 1);
   float y = map(mouseY, 0, height, 1, 0);
   fluidPass.set("mouse", x, y);
+  displayPass.set("mouse", x, y);
   fluidBuffer.beginDraw();
   background(0);
   fluidBuffer.shader(fluidPass);
