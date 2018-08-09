@@ -1,6 +1,7 @@
 
 PShader fluidPass;
 PShader displayPass;
+PShader blurPass;
 PGraphics fluidBuffer;
 PGraphics textBuffer;
 float initialTime;
@@ -16,6 +17,7 @@ void setup() {
   
   fluidPass = loadShader("strange-fluid.glsl");
   displayPass = loadShader("display.glsl");
+  blurPass = loadShader("blur.glsl");
   
   fluidPass.set("resolution", float(fluidBuffer.width), float(fluidBuffer.height));
 }
