@@ -14,7 +14,8 @@ uniform sampler2D ppixels;
 void main()
 {
 	//vec2 uv = gl_FragCoord.xy / resolution.xy;
-    ivec2 uv = ivec2(gl_FragCoord.xy*0.01*mouse.xy);
+    //ivec2 uv = ivec2(gl_FragCoord.xy*0.01*mouse.xy);
+    ivec2 uv = ivec2(gl_FragCoord.xy);
 	//fragColor = vec4( 65.0*pow(texture(iChannel0, uv).rgb, vec3(6.0)), 1.0);
     //fragColor = vec4( 1.0*pow(texture(iChannel0, uv).rgb, vec3(1.0)), 1.0);
     vec3 c = texelFetch(ppixels, uv, 0).rgb;
