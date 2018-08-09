@@ -95,7 +95,7 @@ void main()
         wild2 = mix(mix(blur,wild2,m), blur, m );
 
        // fragColor = vec4(wild2,1.0);
-        gl_FragColor = vec4( vec4( mix(wild2, 
+        gl_FragColor = vec4( mix(wild2, 
                              (vec3(0.0)), 0.75)/comp ,1.0);
        
     }    
