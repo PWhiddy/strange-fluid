@@ -41,5 +41,5 @@ void draw() {
   displayBuffer.image(fluidBuffer, 0, 0);
   displayBuffer.endDraw();
   
-  image(fluidBuffer, 0, 0, width, height);
+  image(displayBuffer, 0, 0, width, height);
 }
