@@ -80,7 +80,7 @@ void main()
         float comp = 0.6;//iMouse.y*0.004+0.2;
         
         vec3 wild2 = vec3(0.0);
-        for (int i = 0; i < 20; i++ ) {
+        for (int i = 0; i < 25; i++ ) {
         	wild2 += 0.5*normalize(cross(wild2,kernel[i]-comp)+comp); 
         }
       // wild2 /= 5.0;
@@ -88,7 +88,7 @@ void main()
         
        // wild2 = mix(wild2, c, 0.001);
         //float m = sqrt(mouse.y/resolution.y);
-        ec2 coords = gl_FragCoord.xy / resolution.xy - 0.5;
+        vec2 coords = gl_FragCoord.xy / resolution.xy - 0.5;
         coords.x *= resolution.x/resolution.y;
         float m = 0.2*distance(coords, vec2(0.0));
         
