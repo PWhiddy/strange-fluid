@@ -54,6 +54,7 @@ void draw() {
   textBuffer.endDraw();
   
   
+  
   fluidPass.set("textBuffer", textBuffer);
   fluidPass.set("mouse", x, y);
   fluidBuffer.beginDraw();
