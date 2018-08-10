@@ -89,6 +89,7 @@ void main()
       // wild2 /= 5.0;
      //   wild2 *= 5.0;//iMouse.x*0.018+0.6;
         
+        
        // wild2 = mix(wild2, c, 0.001);
         //float m = sqrt(mouse.y/resolution.y);
         vec2 coords = gl_FragCoord.xy / resolution.xy - 0.5;
